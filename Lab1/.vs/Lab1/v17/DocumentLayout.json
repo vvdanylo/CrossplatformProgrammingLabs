@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\danylo\\Desktop\\NEGR ZHYD\\crossplatform-labs\\Lab1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1247BF9E-61FB-4642-B160-03A9E6192DD5}|App\\App.csproj|c:\\users\\danylo\\desktop\\negr zhyd\\crossplatform-labs\\lab1\\app\\computationalbiology.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1247BF9E-61FB-4642-B160-03A9E6192DD5}|App\\App.csproj|solutionrelative:app\\computationalbiology.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1247BF9E-61FB-4642-B160-03A9E6192DD5}|App\\App.csproj|c:\\users\\danylo\\desktop\\negr zhyd\\crossplatform-labs\\lab1\\app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1247BF9E-61FB-4642-B160-03A9E6192DD5}|App\\App.csproj|solutionrelative:app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B705DCD-4B2D-4482-A911-16D9E505D732}|Tests\\Tests.csproj|c:\\users\\danylo\\desktop\\negr zhyd\\crossplatform-labs\\lab1\\tests\\unittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B705DCD-4B2D-4482-A911-16D9E505D732}|Tests\\Tests.csproj|solutionrelative:tests\\unittests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ComputationalBiology.cs",
+              "DocumentMoniker": "C:\\Users\\danylo\\Desktop\\NEGR ZHYD\\crossplatform-labs\\Lab1\\App\\ComputationalBiology.cs",
+              "RelativeDocumentMoniker": "App\\ComputationalBiology.cs",
+              "ToolTip": "C:\\Users\\danylo\\Desktop\\NEGR ZHYD\\crossplatform-labs\\Lab1\\App\\ComputationalBiology.cs",
+              "RelativeToolTip": "App\\ComputationalBiology.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAuwBEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T08:33:08.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UnitTests.cs",
+              "DocumentMoniker": "C:\\Users\\danylo\\Desktop\\NEGR ZHYD\\crossplatform-labs\\Lab1\\Tests\\UnitTests.cs",
+              "RelativeDocumentMoniker": "Tests\\UnitTests.cs",
+              "ToolTip": "C:\\Users\\danylo\\Desktop\\NEGR ZHYD\\crossplatform-labs\\Lab1\\Tests\\UnitTests.cs",
+              "RelativeToolTip": "Tests\\UnitTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-17T07:52:11.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\danylo\\Desktop\\NEGR ZHYD\\crossplatform-labs\\Lab1\\App\\Program.cs",
+              "RelativeDocumentMoniker": "App\\Program.cs",
+              "ToolTip": "C:\\Users\\danylo\\Desktop\\NEGR ZHYD\\crossplatform-labs\\Lab1\\App\\Program.cs",
+              "RelativeToolTip": "App\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-16T08:11:11.657Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
