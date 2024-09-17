@@ -1,17 +1,30 @@
-# CrossplatformProgrammingLabs
+# Crossplatform Programming Labs
 
+## Running the Lab
 
-To run lab without printing temporal results
-dotnet run --project .\LabN\App\App.csproj 
-To run lab with printing temporal results
+To run a lab without printing temporary results:
+
+```bash
+dotnet run --project .\LabN\App\App.csproj
+```
+To run a lab with temporary results (verbose mode):
+```bash
 dotnet run --project .\LabN\App\App.csproj --verbose
-To run tests 
-dotnet test .\LabN
-
-N is a number of laboratory work
-for example to run Laboratory work number 1 you need to run the following command 
-dotnet run --project .\Lab1\App\App.csproj 
+```
+Where N is the number of the lab.
+For example, to run Laboratory Work 1:
+```bash
+dotnet run --project .\Lab1\App\App.csproj
 dotnet run --project .\Lab1\App\App.csproj --verbose
-to run tests you need to run the following command 
+```
+## Running Tests
+To run tests for a specific lab:
+```bash
+dotnet test .\LabN
+```
+For example, to run tests for Laboratory Work 1:
+```bash
 dotnet test .\Lab1
-NOTE: all these command are runned from root directory
+```
+### Note: All these commands should be executed from the root directory.
+
