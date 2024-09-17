@@ -29,6 +29,6 @@ public class ComputationalBiology
     }
 
     private static bool IsGeneticSequence(string sequence)
-        => sequence.All(c => c == 'A' || c == 'G' || c == 'C' || c == 'T');
+        => sequence.ToUpper().All(c => c == 'A' || c == 'G' || c == 'C' || c == 'T');
 }
 
