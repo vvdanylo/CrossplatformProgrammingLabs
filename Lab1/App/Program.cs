@@ -4,27 +4,30 @@ public class Program
 {
     public static void Main(string[] args)
     {
-
+        string sequence = String.Empty;
+        string subsequence = String.Empty;
         try
         {
-            var verbose = args.Length == 1 && args[0].Equals("--verbose") ? true : false;
-            solve(verbose);
+            (sequence, subsequence) = FileDataHandler.ReadDnaSequencesFromFile();
+
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.Message);
+            Console.WriteLine($"An exeption occured while reading file: {ex.Message}");
+            return;
         }
-    }
 
-    public static void solve(bool verbose)
-    {
-        Console.WriteLine("Enter subsequence to find:");
-        var subsequence = Console.ReadLine();
-        Console.WriteLine("Enter sequence where to look for subsequence:");
-        var sequence = Console.ReadLine();
-
-        var result = ComputationalBiology.Solve(subsequence, sequence, verbose);
-        Console.WriteLine(result);
+        var result = ComputationalBiology.Solve(sequence, subsequence);
+        
+        try
+        {
+            FileDataHandler.WriteResultToFile(result);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An exeption occured while writing results to file: {ex.Message}");
+            return;
+        }
 
     }
 }

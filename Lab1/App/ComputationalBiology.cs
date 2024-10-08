@@ -4,7 +4,7 @@ public class ComputationalBiology
 {
     private static readonly string Yes = "YES";
     private static readonly string No = "NO";
-    public static string Solve(string? subsequence, string? sequence, bool verbose = false)
+    public static string Solve(string sequence, string subsequence)
     {
         if (string.IsNullOrEmpty(subsequence) || string.IsNullOrEmpty(sequence))
         {
@@ -14,21 +14,24 @@ public class ComputationalBiology
         {
             throw new ArgumentException("The input string is not a genetic sequence");
         }
-        if (subsequence.Length > sequence.Length)
+        if (subsequence.Length < sequence.Length)
         {
             throw new ArgumentOutOfRangeException(nameof(subsequence), "Subsequence can't be longer than sequence");
         }
 
         var j = 0;
-        for (var i = 0; i < sequence.Length; i++)
+        for (var i = 0; i < subsequence.Length; i++)
         {
-            if (char.ToUpper(subsequence[j]) == char.ToUpper(sequence[i])) j++;
-            if (j == subsequence.Length) return Yes;
+            if (char.ToUpper(sequence[j]) == char.ToUpper(subsequence[i])) j++;
+            if (j == sequence.Length) return Yes;
         }
         return No;
     }
 
     private static bool IsGeneticSequence(string sequence)
-        => sequence.ToUpper().All(c => c == 'A' || c == 'G' || c == 'C' || c == 'T');
+    {
+        return sequence.All(c => c == 'A' || c == 'C' || c == 'G' || c == 'T');
+    }
+
 }
 
