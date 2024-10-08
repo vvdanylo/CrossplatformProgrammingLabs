@@ -6,7 +6,7 @@ namespace App;
 
 public static class FileDataHandler
 {
-    private static readonly string FolderPath = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName;
+    private static readonly string FolderPath = Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.Parent!.FullName;
     private static readonly string InputFilePath = Path.Combine(FolderPath, InputFileName);
     private static readonly string OutputFilePath = Path.Combine(FolderPath, OutputFileName);
     private const string OutputFileName = "OUTPUT.TXT";
@@ -16,6 +16,7 @@ public static class FileDataHandler
     {
         if (!File.Exists(InputFilePath))
         {
+            Console.WriteLine(InputFilePath);
             throw new FileNotFoundException($"File was not found");
         }
 
@@ -36,16 +37,6 @@ public static class FileDataHandler
 
         var subsequence = lines[0];
         var sequence = lines[1];
-
-        if (!(IsGeneticSequence(subsequence) && IsGeneticSequence(sequence)))
-        {
-            throw new ArgumentException("The input string is not a genetic sequence");
-        }
-
-        if (subsequence.Length > sequence.Length)
-        {
-            throw new ArgumentOutOfRangeException(nameof(subsequence), "Subsequence can't be longer than sequence");
-        }
 
         return (subsequence, sequence);
     }

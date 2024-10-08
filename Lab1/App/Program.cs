@@ -17,7 +17,17 @@ public class Program
             return;
         }
 
-        var result = ComputationalBiology.Solve(sequence, subsequence);
+        var result = String.Empty;
+        try
+        {
+            result  = ComputationalBiology.Solve(sequence, subsequence);
+            Console.WriteLine($"The result is: {result}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"An exeption occured while solving the problem: {ex.Message}");
+            return;
+        }
         
         try
         {

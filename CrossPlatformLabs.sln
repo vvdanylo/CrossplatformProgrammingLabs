@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lab1", "Lab1", "{6C2D9292-8D3E-4F1C-9ED6-359E6968E068}"
-	ProjectSection(SolutionItems) = preProject
-		Lab1\App\INPUT.txt = Lab1\App\INPUT.txt
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App", "Lab1\App\App.csproj", "{4453FA01-B948-4AB4-AE1D-ED3D5ADCA99F}"
 EndProject
@@ -33,5 +30,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4453FA01-B948-4AB4-AE1D-ED3D5ADCA99F} = {6C2D9292-8D3E-4F1C-9ED6-359E6968E068}
 		{371BA6D7-F1E6-4B2A-9007-7D0AF3C051D0} = {6C2D9292-8D3E-4F1C-9ED6-359E6968E068}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {293B8C37-B882-46E5-95F9-59132F73D508}
 	EndGlobalSection
 EndGlobal
