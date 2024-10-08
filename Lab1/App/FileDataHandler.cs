@@ -16,7 +16,6 @@ public static class FileDataHandler
     {
         if (!File.Exists(InputFilePath))
         {
-            Console.WriteLine(InputFilePath);
             throw new FileNotFoundException($"File was not found");
         }
 

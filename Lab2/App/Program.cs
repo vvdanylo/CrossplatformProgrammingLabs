@@ -4,12 +4,10 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        string sequence = String.Empty;
-        string subsequence = String.Empty;
+        var number = 0;
         try
         {
-            (sequence, subsequence) = FileDataHandler.ReadDnaSequencesFromFile();
-
+            number = FileDataHandler.ReadNumberFromFile();
         }
         catch (Exception ex)
         {
@@ -17,21 +15,21 @@ public class Program
             return;
         }
 
-        var result = String.Empty;
+        var sum = 0;
         try
         {
-            result  = ComputationalBiology.Solve(sequence, subsequence);
-            Console.WriteLine($"The result is (Does the genetic sequence {sequence} contain given subsequence {subsequence}?): {result}");
+            sum = PowersOfTwoSums.Solve(number);
+            Console.WriteLine($"The result is (The ways to represent the given number {number} as powers of 2): {sum}");
         }
         catch (Exception ex)
         {
             Console.WriteLine($"An exeption occured while solving the problem: {ex.Message}");
             return;
         }
-        
+
         try
         {
-            FileDataHandler.WriteResultToFile(result);
+            FileDataHandler.WriteResultToFile(sum);
         }
         catch (Exception ex)
         {
