@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Linq;
-
-namespace App;
+﻿namespace App;
 
 public static class FileDataHandler
 {

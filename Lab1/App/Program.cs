@@ -20,7 +20,7 @@ public class Program
         var result = String.Empty;
         try
         {
-            result  = ComputationalBiology.Solve(sequence, subsequence);
+            result = ComputationalBiology.Solve(sequence, subsequence);
             Console.WriteLine($"The result is (Does the genetic sequence {sequence} contain given subsequence {subsequence}?): {result}");
         }
         catch (Exception ex)
@@ -28,7 +28,7 @@ public class Program
             Console.WriteLine($"An exeption occured while solving the problem: {ex.Message}");
             return;
         }
-        
+
         try
         {
             FileDataHandler.WriteResultToFile(result);
