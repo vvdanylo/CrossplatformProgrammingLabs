@@ -1,7 +1,7 @@
 Vagrant.configure("2") do |config|
   config.vm.define "ubuntu" do |ubuntu|
     ubuntu.vm.box = "ubuntu/jammy64"
-    ubuntu.vm.hostname = "linux"
+    ubuntu.vm.hostname = "danylo-voronov-linux-vm"
     ubuntu.vm.network "private_network", ip: "192.168.56.10"
     ubuntu.vm.provider "virtualbox" do |vb|
       vb.memory = "4096"
@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "windows" do |windows|
     windows.vm.box = "gusztavvargadr/windows-10"
-    windows.vm.hostname = "windows"
+    windows.vm.hostname = "danylo-voronov-windows-vm"
     windows.vm.network "private_network", ip: "192.168.56.11"
     windows.vm.provider "virtualbox" do |vb|
       vb.memory = "4096"
