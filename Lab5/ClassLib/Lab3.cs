@@ -10,7 +10,7 @@ public class Lab3
 {
     static readonly int Infinity = int.MaxValue;
 
-    public static string Execute(string input, string output)
+    public static string Execute(string input)
     {
         Console.WriteLine("Running Lab3...");
         int startStation = 0;
