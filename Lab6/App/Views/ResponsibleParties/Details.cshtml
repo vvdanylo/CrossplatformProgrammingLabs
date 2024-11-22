@@ -1,0 +1,31 @@
+@model ResponsibleParty
+
+@{
+    ViewData["Title"] = "Responsible Party Details";
+}
+
+<div class="container mt-4">
+    <h2>Responsible Party Details</h2>
+
+    <div class="card">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Party Details</dt>
+                <dd class="col-sm-9">@Model.PartyDetails</dd>
+
+                <dt class="col-sm-3">Associated Assets</dt>
+                <dd class="col-sm-9">
+                    @foreach (var assetLifeCycleEvent in ViewData["AssociatedAssets"] as List<AssetsLifeCycleEvent>)
+
+                    {
+                        <div>@assetLifeCycleEvent.Asset.AssetName</div>
+                    }
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

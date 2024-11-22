@@ -1,0 +1,32 @@
+@model IEnumerable<ResponsibleParty>
+
+@{
+    ViewData["Title"] = "Responsible Parties";
+}
+
+<div class="container mt-4">
+    <h2>Responsible Parties</h2>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Party Details</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var responsibleParty in Model)
+
+                {
+                    <tr>
+                        <td>@responsibleParty.PartyDetails</td>
+                        <td>
+                            <a asp-action="Details" asp-route-id="@responsibleParty.PartyId" class="btn btn-info btn-sm">Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

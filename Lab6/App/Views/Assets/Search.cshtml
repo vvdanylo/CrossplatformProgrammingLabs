@@ -1,0 +1,103 @@
+@model AssetSearchViewModel
+
+@{
+    ViewData["Title"] = "Search Assets";
+}
+
+<div class="container mt-4">
+    <h2>Search Assets</h2>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <form asp-action="Search" method="post">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="AssetName" class="form-label">Asset Name</label>
+                        <input asp-for="AssetName" class="form-control" placeholder="Search by asset name" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="AssetTypeCode" class="form-label">Asset Type</label>
+                        <input asp-for="AssetTypeCode" class="form-control" placeholder="Search by asset type" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="SizeCode" class="form-label">Size</label>
+                        <input asp-for="SizeCode" class="form-control" placeholder="Search by size" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="StatusCode" class="form-label">Status</label>
+                        <input asp-for="StatusCode" class="form-control" placeholder="Search by status" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="LifeCycleEventStartDate" class="form-label">Start Date</label>
+                        <input asp-for="LifeCycleEventStartDate" type="date" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="LifeCycleEventEndDate" class="form-label">End Date</label>
+                        <input asp-for="LifeCycleEventEndDate" type="date" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                    <a asp-action="Search" class="btn btn-secondary">Clear</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    @if (Model.SearchPerformed)
+
+    {
+
+        if (Model.Results.Any())
+
+        {
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Asset Name</th>
+                            <th>Type</th>
+                            <th>Size</th>
+                            <th>Status</th>
+                            <th>Life Cycle Phase</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var asset in Model.Results)
+
+                        {
+                            <tr>
+                                <td>@asset.AssetName</td>
+                                <td>@asset.RefAssetType.AssetTypeDescription</td>
+                                <td>@asset.RefSize.SizeDescription</td>
+                                <td>@asset.AssetsLifeCycleEvents.Last().StatusCode</td>
+                                <td>@asset.AssetsLifeCycleEvents.Last().LifeCyclePhase.LifeCycleName</td>
+                                <td>
+                                    <a asp-action="Details" asp-route-id="@asset.AssetId" class="btn btn-info btn-sm">Details</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+
+        else
+
+        {
+            <div class="alert alert-info">
+                No assets found matching your search criteria.
+            </div>
+        }
+
+    }
+</div>
