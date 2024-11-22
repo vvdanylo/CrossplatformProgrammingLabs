@@ -1,0 +1,21 @@
+@{
+    ViewData["Title"] = "First Lab";
+}
+
+<h2>First Lab</h2>
+
+<div style="margin-bottom: 20px;">
+    <form asp-action="First" method="post" style="display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 500px;">
+        <label for="inputText" style="font-weight: bold;">Enter data:</label>
+        <textarea id="inputText" name="inputText" rows="6" style="padding: 10px; font-family: Arial, sans-serif; resize: vertical;"></textarea>
+        <button type="submit" style="padding: 10px; font-size: 16px; font-weight: bold; cursor: pointer;">Run</button>
+    </form>
+</div>
+
+@if (ViewBag.OutputResult != null)
+{
+    <div style="margin-top: 20px;">
+        <h3 style="font-weight: bold;">Result:</h3>
+        <textarea rows="4" readonly style="width: 100%; max-width: 500px; padding: 10px; font-family: Arial, sans-serif; resize: vertical;">@ViewBag.OutputResult</textarea>
+    </div>
+}

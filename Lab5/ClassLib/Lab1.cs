@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ClassLib;
 
@@ -10,14 +11,14 @@ public class Lab1
 {
     private static readonly string Yes = "YES";
     private static readonly string No = "NO";
-    public static string Execute(string input)
+    public static string Execute(string text)
     {
         Console.WriteLine("Running Lab1...");
         string sequence = String.Empty;
         string subsequence = String.Empty;
         try
         {
-            (sequence, subsequence) = ReadDnaSequencesFromFile(input);
+            (sequence, subsequence) = ReadDnaSequencesFromFile(text);
 
         }
         catch (Exception ex)
@@ -65,16 +66,12 @@ public class Lab1
         return No;
     }
 
-    private static (string s, string t) ReadDnaSequencesFromFile(string input)
+    private static (string s, string t) ReadDnaSequencesFromFile(string text)
     {
-        if (!File.Exists(input))
-        {
-            throw new FileNotFoundException($"File was not found");
-        }
-
-        var lines = File.ReadAllLines(input)
-            .Select(line => line.Trim())
-            .Where(line => !string.IsNullOrWhiteSpace(line))
+        var lines = text.Replace("\r", "")
+            .Split('\n', StringSplitOptions.RemoveEmptyEntries)
+            .Select(static line => line.Trim())
+            .Where(static line => !string.IsNullOrWhiteSpace(line))
             .ToArray();
 
         if (lines.Length == 0)

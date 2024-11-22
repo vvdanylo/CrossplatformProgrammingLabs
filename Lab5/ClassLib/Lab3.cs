@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ClassLib;
 
@@ -19,7 +20,7 @@ public class Lab3
 
         try
         {
-            (startStation, destinationStation, trainRoutes) = ReadInputFromFile(input);
+            (startStation, destinationStation, trainRoutes) = ReadInputFromText(input);
         }
         catch (Exception ex)
         {
@@ -139,16 +140,12 @@ public class Lab3
 
         return trainRoutes;
     }
-    private static (int startStation, int destinationStation, List<TrainRoute> trainRoutes) ReadInputFromFile(string input)
+    private static (int startStation, int destinationStation, List<TrainRoute> trainRoutes) ReadInputFromText(string text)
     {
-        if (!File.Exists(input))
-        {
-            throw new FileNotFoundException($"The file {input} was not found.");
-        }
-
-        var lines = File.ReadAllLines(input)
-            .Select(line => line.Trim())
-            .Where(line => !string.IsNullOrWhiteSpace(line))
+        var lines = text.Replace("\r", "")
+            .Split('\n', StringSplitOptions.RemoveEmptyEntries)
+            .Select(static line => line.Trim())
+            .Where(static line => !string.IsNullOrWhiteSpace(line))
             .ToArray();
 
         if (lines.Length < 2)

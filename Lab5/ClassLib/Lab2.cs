@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ClassLib;
 
@@ -14,7 +15,7 @@ public class Lab2
         var number = 0;
         try
         {
-            number = ReadNumberFromFile(input);
+            number = ReadNumberFromText(input);
         }
         catch (Exception ex)
         {
@@ -56,17 +57,14 @@ public class Lab2
         return sums;
     }
 
-    private static int ReadNumberFromFile(string input)
+    private static int ReadNumberFromText(string text)
     {
-        if (!File.Exists(input))
-        {
-            throw new FileNotFoundException($"The file {input} was not found.");
-        }
-
-        var lines = File.ReadAllLines(input)
+        var lines = text.Replace("\r", "")
+            .Split('\n', StringSplitOptions.RemoveEmptyEntries)
             .Select(static line => line.Trim())
             .Where(static line => !string.IsNullOrWhiteSpace(line))
             .ToArray();
+
         if (lines.Length == 0)
         {
             throw new InvalidDataException("The file does not contain any text");
